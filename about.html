@@ -6,7 +6,29 @@
     <title>Walukow</title>
 
     <!-- Link Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind -->
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #da373d;
+        }
+    
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    
+        @layer utilities {
+            .animate-floating {
+                animation: floating 3s ease-in-out infinite;
+            }
+        }
+    </style>
 
     <!-- color #0A192F -->
 
@@ -16,8 +38,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-</head>
-<body class="bg-[url(bg.jpeg)] bg-cover bg-center bg-no-repeat text-gray-300 transition-colors duration-300 max-h-[100vh] h-[100vh] overflow-hidden flex justify-center">
 
+</head>
+<body class="bg-[url(bg.jpeg)] bg-cover bg-center bg-no-repeat text-gray-300 transition-colors duration-300 max-h-[100vh] overflow-hidden flex justify-center">
+
+    <!-- <img src="aku.png" class="h-[60vh] absolute right-0 -bottom-4 rounded-md opacity-70" alt=""> -->
+
+    <section class="text-slate-400 space-y-4 justify-center min-w-sm max-w-2xl  relative min-h-screen flex flex-col p-4 font-[Montserrat]">
+        
+        <div id="container1" class="relative z-10 space-y-2">
+            <div id="fadeName" class="flex justify-between w-full items-center">
+                <svg id="back" class="size-7 cursor-pointer hover:text-slate-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                </svg>                               
+                <p class="text-2xl lg:text-4xl font-semibold text-end">ABOUT</p>
+            </div>
+            <hr id="firstLine" class=" min-[451px]:w-full h-[2px] bg-slate-400 origin-right scale-x-0">
+            <p id="desc" class="font-[Montserrat]">I'm a <i class="font-semibold">web developer</i> & I do so much more, Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officiis omnis perferendis, laudantium officia quis mollitia corrupti expedita? Facilis corporis excepturi necessitatibus quis sit amet..</p>
+        </div>
+        <div id="container2" class="fade opacity-0 flex flex-col justify-center text-center items-center mt-2">
+            <p class="text-xl border-b-2 font-semibold w-fit">Subjudul</p>
+            <p class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus harum voluptate a velit corrupti, nulla ut illo corporis ipsam aliquid sed recusandae maxime dolor quae.
+            </p>
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script>
+        const back = document.getElementById('back')
+
+        gsap.registerPlugin(ScrollTrigger) 
+        gsap.from("img", { y: 600, duration: 1 })
+        gsap.to("#firstLine", {
+            scaleX: 1,  // Perbesar skala X dari 0 ke 1 (membuat garis muncul)
+            duration: 1, // Durasi animasi dalam detik
+            ease: "power2.out" // Easing untuk efek smooth
+        });
+        gsap.from("#fadeName", { opacity: 0, y: 20, duration: 1, delay: 2, ease: 'power2.out' });
+        gsap.from('#desc', { opacity: 0, y: -10, duration: 1, delay: 1 })
+        gsap.to(".fade", { opacity: 1, duration: 1, delay: 3})
+
+
+        function animateAndRedirect(url) {
+        gsap.to("#firstLine", {
+            scaleX: 0,  // Perbesar skala X dari 0 ke 1 (membuat garis muncul)
+            duration: 1, // Durasi animasi dalam detik
+            ease: "power2.out", // Easing untuk efek smooth
+            delay: 1
+        });
+        gsap.to("#fadeName", { opacity: 0, y: 20, duration: 1, delay: 0.5, ease: 'power2.out' });
+        gsap.to('#desc', { opacity: 0, y: -10, duration: 1, delay: 0.5 })
+        gsap.to(".fade", { opacity: 0, duration: 0.5, delay: 0})
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 2000); // Tunggu animasi selesai sebelum redirect
+        }
+
+        back.addEventListener('click', e => {
+            e.preventDefault()
+            animateAndRedirect('index.html')
+        })
+
+    </script>
 </body>
 </html>
