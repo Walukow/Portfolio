@@ -38,32 +38,70 @@
 
     <!-- <img src="aku.png" class="h-[60vh] absolute right-0 -bottom-4 rounded-md opacity-70" alt=""> -->
 
-    <section class="text-first-50 space-y-4 justify-center min-w-sm max-w-2xl  relative min-h-screen flex flex-col p-4 font-[Montserrat]">
+    <section class="text-first-50 space-y-4 justify-center max-w-2xl relative min-h-screen flex flex-col font-[Montserrat] text-sm lg:text-base">
         
-        <div id="container1" class="relative z-10 space-y-2">
-            <div id="fadeName" class="flex justify-between w-full items-center">
-                <svg id="back" class="size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <div id="container1" class="relative z-10 space-y-2 min-h-[50vh] min-w-screen sm:min-w-sm sm:w-2xl px-4">
+            <div id="fadeName" class="flex justify-between w-full items-center w-full">
+                <svg id="back" class="size-5 lg:size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
                 </svg>                               
                 <p class="text-2xl lg:text-4xl font-semibold text-end">ABOUT</p>
             </div>
             <hr id="firstLine" class=" min-[451px]:w-full h-[2px] text-transparent bg-first-50 origin-right scale-x-0">
-            <p id="desc" class="font-[Montserrat]">I'm a <i class="font-semibold">web developer</i> & I do so much more, Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officiis omnis perferendis, laudantium officia quis mollitia corrupti expedita? Facilis corporis excepturi necessitatibus quis sit amet..</p>
+            <p id="desc" class="font-[Montserrat]">
+                Hello, my name is <span class="font-semibold">Surya Herlambang Walukow</span>, but you can call me <i class="font-semibold">Lambang</i>.  
+                My main interest is <span class="font-semibold">web development</span>, and I am involved in various aspects of programming, such as developing <i class="font-semibold">machine learning</i> models using <span class="font-semibold">Python</span>, creating various <span class="font-semibold">IoT</span> projects using <span class="font-semibold">Arduino</span>, and building <i class="font-semibold">simple desktop applications</i> with <span class="font-semibold">NetBeans</span>.
+            </p>            
+            <p id="quote" class="font-[Montserrat] hidden opacity-0 text-center">
+                "<i class="font-semibold">In the end, <span class="text-first-500">everything</span> depends on <span class="text-first-500">you</span>.</i>"  
+            </p>            
         </div>
-        <div id="container2" class="fade opacity-0 flex flex-col justify-center text-center items-center mt-2">
-            <p class="text-xl border-b-2 font-semibold w-fit">Subjudul</p>
-            <p class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus harum voluptate a velit corrupti, nulla ut illo corporis ipsam aliquid sed recusandae maxime dolor quae.
-            </p>
+        <div id="down" class="flex justify-center cursor-pointer">
+            <svg class="size-7 animate-ping absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>      
+            <svg class="size-5 absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>      
         </div>
-
+        <div id="up" class="flex justify-center cursor-pointer hidden">   
+            <svg class="size-5 absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+            </svg>                 
+        </div>
+        <div id="container2" class="opacity-0 flex flex-col justify-center text-center items-center mt-2 absolute hidden">
+            <p class="text-xl border-b-2 font-semibold w-fit">My Adventures</p>
+            <p class="font-[Montserrat]">
+                I was born in <span class="font-semibold">Bandung</span> and raised in <span class="font-semibold">Pemalang</span>.  
+                I attended <span class="font-semibold">SDN 02 Kebondalem Pemalang</span> for elementary school, then continued to <span class="font-semibold">SMPN 2 Pemalang</span> for middle school, and I am currently studying at <span class="font-semibold">SMKN 1 Pemalang</span>.  
+            
+                My interest in <span class="font-semibold">programming</span> began when I entered <span class="font-semibold">SMKN 1 Pemalang</span>, especially after my parents bought me a laptop. Since then, my <i class="font-semibold">programming skills</i> have significantly improved through <i class="font-semibold">self-learning</i> rather than relying solely on school lessons.
+            </p>            
+        </div>
+        <!-- <div id="container2" class="fade opacity-0 flex flex-col justify-center text-center items-center mt-2">
+            <p class="text-xl border-b-2 font-semibold w-fit">Languages</p>
+            <p class="font-[Montserrat]">
+                The programming languages I have used are:  
+                <br>
+                - <span class="font-semibold">PHP</span> - I have been learning and using <i>PHP</i> <span class="font-semibold">for over a year</span>.  
+                - <span class="font-semibold">JavaScript</span> - I have also been learning and using <i>JavaScript</i> <span class="font-semibold">for approximately a year</span>.  
+                - <span class="font-semibold">Python</span> - I have been working with <i>Python</i> for about <span class="font-semibold">four months</span>.  
+                - <span class="font-semibold">Java</span> - I have been using <i>Java</i> for roughly <span class="font-semibold">nine months</span>.  
+            </p>            
+        </div> -->
+        
     </section>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script>
         const back = document.getElementById('back')
+        const up = document.getElementById('up')
+        const down = document.getElementById('down')
+        const desc = document.getElementById('desc')
+        const quote = document.getElementById('quote')
+        const container1 = document.getElementById('container1')
+        const container2 = document.getElementById('container2')
 
         gsap.registerPlugin(ScrollTrigger) 
         gsap.from("img", { y: 600, duration: 1 })
@@ -84,14 +122,71 @@
             ease: "power2.out", // Easing untuk efek smooth
             delay: 1
         });
-        gsap.to("#fadeName", { opacity: 0, y: 20, duration: 1, delay: 0.5, ease: 'power2.out' });
+        gsap.to("#fadeName", { opacity: 0, y: 20, duration: 1, delay: 0.5, ease: 'power2.out' })
         gsap.to('#desc', { opacity: 0, y: -10, duration: 1, delay: 0.5 })
-        gsap.to(".fade", { opacity: 0, duration: 0.5, delay: 0})
-
             setTimeout(() => {
-                window.location.href = url;
-            }, 2000); // Tunggu animasi selesai sebelum redirect
+                window.location.href = url
+            }, 2000)
         }
+
+
+        let isAnimating = false;
+
+        down.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            gsap.to("#down", { y: 100, duration: 1 })
+            gsap.to("#down svg:nth-child(1)", { opacity: 0, duration: 0.2 })
+            gsap.to("#up", { y: 100, duration: 1 })
+            gsap.to("#desc", { opacity: 0, y: -10, duration: 1 })
+            setTimeout(() => {
+                desc.classList.add('hidden')
+                gsap.to("#container1", { y: -100, duration: 1 })
+                gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: -180 })
+            }, 1000)
+            setTimeout(() => {
+                quote.classList.remove('hidden')
+                gsap.to("#quote", { opacity: 1, y: 10, duration: 1 })
+                down.classList.add('hidden')
+                up.classList.remove('hidden')
+                container2.classList.remove('hidden')
+                gsap.to("#container2", { opacity: 1, duration: 1, delay: 1 })
+                isAnimating = false;
+            }, 2000)
+        })
+
+        up.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            gsap.to("#container2", { opacity: 0, duration: 0.5 })
+            gsap.to("#quote", { opacity: 0, y: -10, duration: 1 })
+            setTimeout(() => {
+                quote.classList.add('hidden')
+                container2.classList.add('hidden')
+                up.classList.add('hidden')
+                down.classList.remove('hidden')
+                gsap.to("#down", { y: 0, duration: 1 })
+                gsap.to("#up", { y: 0, duration: 1 })
+                gsap.to("#container1", { y: 0, duration: 1 })
+                gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: 0 })
+            }, 1000)
+            setTimeout(() => {
+                desc.classList.remove('hidden')
+                gsap.to("#down svg:nth-child(1)", { opacity: 1, duration: 0.2 })
+                gsap.to("#desc", { opacity: 1, y: 0, duration: 1 })
+                isAnimating = false;
+            }, 2000)
+        })
+
+
+
+
+
+
+
+
 
         back.addEventListener('click', e => {
             e.preventDefault()
