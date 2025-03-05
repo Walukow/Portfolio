@@ -40,7 +40,7 @@
 
     <section class="text-first-50 space-y-4 justify-center max-w-2xl relative min-h-screen flex flex-col font-[Montserrat] text-sm lg:text-base">
         
-        <div id="container1" class="relative z-10 space-y-2 min-h-[50vh] min-w-screen sm:min-w-sm sm:w-2xl px-4">
+        <div id="container1" class="relative z-10 space-y-2 min-h-[30vh] min-w-screen sm:min-w-sm sm:w-2xl px-4">
             <div id="fadeName" class="flex justify-between w-full items-center w-full">
                 <svg id="back" class="size-5 lg:size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
@@ -56,7 +56,7 @@
                 "<i class="font-semibold">In the end, <span class="text-first-500">everything</span> depends on <span class="text-first-500">you</span>.</i>"  
             </p>            
         </div>
-        <div id="down" class="flex justify-center cursor-pointer">
+        <div id="down" class="flex justify-center cursor-pointer hover:text-first-300">
             <svg class="size-7 animate-ping absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
             </svg>      
@@ -64,7 +64,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
             </svg>      
         </div>
-        <div id="up" class="flex justify-center cursor-pointer hidden">   
+        <div id="up" class="flex justify-center cursor-pointer hover:text-first-300 hidden">   
             <svg class="size-5 absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
             </svg>                 
@@ -93,7 +93,7 @@
     </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script> -->
     <script>
         const back = document.getElementById('back')
         const up = document.getElementById('up')
@@ -103,7 +103,8 @@
         const container1 = document.getElementById('container1')
         const container2 = document.getElementById('container2')
 
-        gsap.registerPlugin(ScrollTrigger) 
+        // gsap.registerPlugin(ScrollTrigger) 
+        gsap.from("#down", { scaleX: 0, scaleY: 0, duration: 0.5, delay: 2 })
         gsap.from("img", { y: 600, duration: 1 })
         gsap.to("#firstLine", {
             scaleX: 1,  // Perbesar skala X dari 0 ke 1 (membuat garis muncul)
@@ -127,71 +128,76 @@
             setTimeout(() => {
                 window.location.href = url
             }, 2000)
+        gsap.to("#down", { scaleX: 0, scaleY: 0, duration: 0.5, delay: 0.5 })
         }
 
 
         let isAnimating = false;
 
-        down.addEventListener('click', () => {
-            if (isAnimating) return;
-            isAnimating = true;
+    function backClickHandler(e) {
+        e.preventDefault();
+        animateAndRedirect('index.html');
+    }
 
-            gsap.to("#down", { y: 100, duration: 1 })
-            gsap.to("#down svg:nth-child(1)", { opacity: 0, duration: 0.2 })
-            gsap.to("#up", { y: 100, duration: 1 })
-            gsap.to("#desc", { opacity: 0, y: -10, duration: 1 })
-            setTimeout(() => {
-                desc.classList.add('hidden')
-                gsap.to("#container1", { y: -100, duration: 1 })
-                gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: -180 })
-            }, 1000)
-            setTimeout(() => {
-                quote.classList.remove('hidden')
-                gsap.to("#quote", { opacity: 1, y: 10, duration: 1 })
-                down.classList.add('hidden')
-                up.classList.remove('hidden')
-                container2.classList.remove('hidden')
-                gsap.to("#container2", { opacity: 1, duration: 1, delay: 1 })
-                isAnimating = false;
-            }, 2000)
-        })
+    down.addEventListener('click', () => {
+        back.removeEventListener('click', backClickHandler); // Hapus event listener
+        if (isAnimating) return;
+        isAnimating = true;
 
-        up.addEventListener('click', () => {
-            if (isAnimating) return;
-            isAnimating = true;
+        gsap.to("#back", { opacity: 0, y: 10, duration: 1 });
+        gsap.to("#down", { y: 100, duration: 1 });
+        gsap.to("#down svg:nth-child(1)", { opacity: 0, duration: 0.2 });
+        gsap.to("#up", { y: 100, duration: 1 });
+        gsap.to("#desc", { opacity: 0, y: -10, duration: 1 });
 
-            gsap.to("#container2", { opacity: 0, duration: 0.5 })
-            gsap.to("#quote", { opacity: 0, y: -10, duration: 1 })
-            setTimeout(() => {
-                quote.classList.add('hidden')
-                container2.classList.add('hidden')
-                up.classList.add('hidden')
-                down.classList.remove('hidden')
-                gsap.to("#down", { y: 0, duration: 1 })
-                gsap.to("#up", { y: 0, duration: 1 })
-                gsap.to("#container1", { y: 0, duration: 1 })
-                gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: 0 })
-            }, 1000)
-            setTimeout(() => {
-                desc.classList.remove('hidden')
-                gsap.to("#down svg:nth-child(1)", { opacity: 1, duration: 0.2 })
-                gsap.to("#desc", { opacity: 1, y: 0, duration: 1 })
-                isAnimating = false;
-            }, 2000)
-        })
+        setTimeout(() => {
+            desc.classList.add('hidden');
+            back.classList.remove('cursor-pointer');
+            gsap.to("#container1", { y: -100, duration: 1 });
+            gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: -180 });
+        }, 1000);
 
+        setTimeout(() => {
+            quote.classList.remove('hidden');
+            gsap.to("#quote", { opacity: 1, y: 10, duration: 1 });
+            down.classList.add('hidden');
+            up.classList.remove('hidden');
+            container2.classList.remove('hidden');
+            gsap.to("#container2", { opacity: 1, duration: 1, delay: 1 });
+            isAnimating = false;
+        }, 2000);
+    });
 
+    up.addEventListener('click', () => {
+        if (isAnimating) return;
+        isAnimating = true;
 
+        gsap.to("#container2", { opacity: 0, duration: 0.5 });
+        gsap.to("#quote", { opacity: 0, y: -10, duration: 1 });
 
+        setTimeout(() => {
+            quote.classList.add('hidden');
+            container2.classList.add('hidden');
+            up.classList.add('hidden');
+            down.classList.remove('hidden');
+            gsap.to("#down", { y: 0, duration: 1 });
+            gsap.to("#up", { y: 0, duration: 1 });
+            gsap.to("#container1", { y: 0, duration: 1 });
+            gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: 0 });
+        }, 1000);
 
+        setTimeout(() => {
+            desc.classList.remove('hidden');
+            back.classList.add('cursor-pointer');
+            gsap.to("#down svg:nth-child(1)", { opacity: 1, duration: 0.2 });
+            gsap.to("#desc", { opacity: 1, y: 0, duration: 1 });
+            gsap.to("#back", { opacity: 1, y: 0, duration: 1 });
+            isAnimating = false;
 
-
-
-
-        back.addEventListener('click', e => {
-            e.preventDefault()
-            animateAndRedirect('index.html')
-        })
+            back.addEventListener('click', backClickHandler); // Tambahkan event listener kembali
+        }, 2000);
+    });
+    back.addEventListener('click', backClickHandler); // Tambahkan event listener kembali
 
     </script>
 </body>
