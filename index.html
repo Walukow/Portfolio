@@ -61,7 +61,7 @@
             <p id="typingName" class="text-2xl lg:text-4xl font-semibold opacity-0"></p>
         </div>
         
-        <div id="nav" class="flex justify-center items-center flex-col text-lg">
+        <div id="nav" class="flex justify-center items-center flex-col text-lg hidden">
             <p id="about" class="opacity-0 cursor-pointer hover:text-first-400 duration-300 relative group">
                 <svg class="size-5 lg:size-7 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -108,6 +108,7 @@
         const github = document.getElementById('github');
         const lin = document.getElementById('lin')
         const ig = document.getElementById('ig')
+        const nav = document.getElementById('nav')
 
         gsap.to("#firstLine", {
         scaleX: 1,  // Perbesar skala X dari 0 ke 1 (membuat garis muncul)
@@ -157,9 +158,12 @@
             delay: 1
         });
 
-        setTimeout(() => {for(let i = 1; i <= 3; i++) {
-            gsap.to(`#nav p:nth-child(${i})`, {duration: 0.8, y: 5, opacity: 1, delay: (i / 3)})
-        }}, 4500)
+        setTimeout(() => {
+            nav.classList.remove('hidden')
+            for(let i = 1; i <= 3; i++) {
+                gsap.to(`#nav p:nth-child(${i})`, {duration: 0.8, y: 5, opacity: 1, delay: (i / 3)})
+            }
+        }, 4500)
 
         // about.addEventListener('click', e => {
         //     e.preventDefault()
