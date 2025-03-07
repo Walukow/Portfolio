@@ -117,11 +117,13 @@
         function animateAndRedirect(url) {
         gsap.to("#firstLine", {
             scaleX: 0,  // Perbesar skala X dari 0 ke 1 (membuat garis muncul)
-            duration: 1, // Durasi animasi dalam detik
-            ease: "power2.out", // Easing untuk efek smooth
-            delay: 1
+            duration: 0.7, // Durasi animasi dalam detik
+            ease: "", // Easing untuk efek smooth
+            delay: 1.3
         });
+        gsap.to("#img", { x: 150, duration: 1 , opacity: 0, delay: 1, ease: 'power2.out' })
         gsap.to("#fadeName", { opacity: 0, y: 20, duration: 1, delay: 0.5, ease: 'power2.out' })
+        gsap.to("#resImg img", { duration: 1 , opacity: 0 })
         gsap.to('#desc', { opacity: 0, y: -10, duration: 1, delay: 0.5 })
             setTimeout(() => {
                 window.location.href = url
