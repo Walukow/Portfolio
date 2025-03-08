@@ -37,15 +37,15 @@
 <body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-no-repeat text-first-50 transition-colors duration-300 max-h-[100vh] overflow-hidden flex justify-center">
 
     <!-- Hero Section -->
-    <section class="text-first-50 space-y-4 justify-center relative min-h-screen flex flex-col p-4 font-[Montserrat]">
+    <section class="text-first-50 space-y-4 justify-center relative min-h-screen flex flex-col p-4 font-[Montserrat] text-xs min-[700px]:text-base">
         
         <!-- Overlay Gradient -->
         <!-- <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A192F]/5 to-[#0A192F] md:hidden"></div> -->
 
         <!-- Konten -->
         <div id="container1" class="relative z-10">
-            <p id="fadeText" class="text-2xl lg:text-4xl">HI, I'M</p>
-            <p id="fadeName" class="text-2xl lg:text-4xl font-semibold font text-first-400">SURYA HERLAMBANG WALUKOW</p>
+            <p id="fadeText" class="text-xl min-[700px]:text-2xl lg:text-4xl">HI, I'M</p>
+            <p id="fadeName" class="text-xl min-[700px]:text-2xl lg:text-4xl font-semibold font text-first-400">SURYA HERLAMBANG WALUKOW</p>
             <hr id="firstLine" class="my-2 w-1/2 min-[451px]:w-full h-[2px] text-transparent bg-first-50 origin-left scale-x-0">
             <p id="desc" class="font-[Montserrat]">I'm a <i class="font-semibold text-first-400">web developer</i> & I do so much more</p>
         </div>
@@ -62,13 +62,13 @@
             </span>
         </div>
         
-        <div id="container2" class="text-end w-full">
-            <p id="typingText" class="text-2xl lg:text-4xl opacity-0"></p>
-            <p id="typingName" class="text-2xl lg:text-4xl font-semibold opacity-0 text-first-500"></p>
+        <div id="container2" class="text-end w-full h-[10vh] overflow-hidden">
+            <p id="typingText" class="text-xl min-[700px]:text-2xl lg:text-4xl overflow-hidden">BUT YOU CAN CALL ME</p>
+            <p id="typingName" class="text-xl min-[700px]:text-2xl lg:text-4xl font-semibold text-first-500"></p>
         </div>
         
-        <div id="nav" class="flex justify-center items-center flex-col text-lg hidden">
-            <p id="about" class="opacity-0 cursor-pointer hover:text-first-400 duration-300 relative group">
+        <div id="nav" class="flex justify-center items-center flex-col text-sm min-[700px]:text-lg">
+            <p id="about" class="opacity-0 hover:text-first-400 duration-300 relative group">
                 <svg class="size-5 lg:size-7 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                 </svg>
@@ -76,7 +76,7 @@
                 <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-current duration-700 group-hover:w-full"></span>
             </p>
         
-            <p id="projects" class="opacity-0 cursor-pointer hover:text-first-400 duration-300 relative group">
+            <p id="projects" class="opacity-0 hover:text-first-400 duration-300 relative group">
                 <svg class="size-5 lg:size-7 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                 </svg>
@@ -84,7 +84,7 @@
                 <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-current duration-700 group-hover:w-full"></span>
             </p>
         
-            <p id="contact" class="opacity-0 cursor-pointer hover:text-first-400 duration-300 relative group">
+            <p id="contact" class="opacity-0 hover:text-first-400 duration-300 relative group">
                 <svg class="size-5 lg:size-7 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                 </svg>
@@ -106,8 +106,13 @@
 
     
 
+    <!-- Text Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
+
     <!-- Script -->
     <script>
+        gsap.registerPlugin(TextPlugin)
+
         const about = document.getElementById('about')
         const projects = document.getElementById('projects')
         const contact = document.getElementById('contact')
@@ -115,6 +120,7 @@
         const lin = document.getElementById('lin')
         const ig = document.getElementById('ig')
         const nav = document.getElementById('nav')
+        let isAnimated = false
 
         gsap.to("#firstLine", {
         scaleX: 1,  // Perbesar skala X dari 0 ke 1 (membuat garis muncul)
@@ -125,31 +131,48 @@
         gsap.from("#fadeName", { opacity: 0, y: 10, duration: 1, delay: 1, ease: 'none' });
     
         // Fungsi untuk efek mengetik
-        function typeEffect(elementId, text, startDelay = 0) {
-            let element = document.getElementById(elementId);
-            let index = 0; // Index harus lokal agar tidak berbagi dengan teks lain
+        // function typeEffect(elementId, text, startDelay = 0) {
+        //     let element = document.getElementById(elementId);
+        //     let index = 0; // Index harus lokal agar tidak berbagi dengan teks lain
     
-            setTimeout(() => {
-                element.style.opacity = "1"; // Munculkan elemen
-                let interval = setInterval(() => {
-                    element.textContent += text[index]; // Tambah huruf satu per satu
-                    index++;
+        //     setTimeout(() => {
+        //         element.style.opacity = "1"; // Munculkan elemen
+        //         let interval = setInterval(() => {
+        //             element.textContent += text[index]; // Tambah huruf satu per satu
+        //             index++;
     
-                    if (index === text.length) {
-                        clearInterval(interval); // Hentikan interval saat teks selesai
-                    }
-                }, 100); // Waktu per karakter (100ms)
-            }, startDelay);
-        }
+        //             if (index === text.length) {
+        //                 clearInterval(interval); // Hentikan interval saat teks selesai
+        //             }
+        //         }, 80); // Waktu per karakter (100ms)
+        //     }, startDelay);
+        // }
     
-        // Efek mengetik setelah fade-in selesai
-        setTimeout(() => {
-            typeEffect("typingText", "BUT YOU CAN CALL ME");
-        }, 2000);
+        // // Efek mengetik setelah fade-in selesai
+        // setTimeout(() => {
+        //     typeEffect("typingText", "BUT YOU CAN CALL ME");
+        // }, 2000);
     
-        setTimeout(() => {
-            typeEffect("typingName", "LAMBANG", 0);
-        }, 4000);
+        // setTimeout(() => {
+        //     typeEffect("typingName", "LAMBANG", 0);
+        // }, 4000);
+
+
+        // gsap.to('#typingText', {
+        // duration: 2,
+        // text: "BUT YOU CAN CALL ME",
+        // ease: "rough",
+        // delay: 2
+        // })
+
+        gsap.from("#typingText", { y: -40, duration: 1, delay: 2, opacity: 0 })
+        
+        gsap.to('#typingName', {
+        duration: 1.5,
+        text: "LAMBANG",
+        ease: 'slow',
+        delay: 2.5
+    })
 
         gsap.from('#desc', { opacity: 0, y: -10, duration: 1, delay: 1 })
 
@@ -169,7 +192,22 @@
             for(let i = 1; i <= 3; i++) {
                 gsap.to(`#nav p:nth-child(${i})`, {duration: 0.8, y: 5, opacity: 1, delay: (i / 3)})
             }
-        }, 4500)
+            about.addEventListener('click', e => {
+                e.preventDefault()
+                animateAndRedirect('about.html')
+            })
+            projects.addEventListener('click', e => {
+                e.preventDefault()
+                animateAndRedirect('about.html')
+            })
+            contact.addEventListener('click', e => {
+                e.preventDefault()
+                animateAndRedirect('about.html')
+            })
+            about.classList.add('cursor-pointer')
+            projects.classList.add('cursor-pointer')
+            contact.classList.add('cursor-pointer')
+        }, 1000)
 
         // about.addEventListener('click', e => {
         //     e.preventDefault()
@@ -182,6 +220,9 @@
 
 
         function animateAndRedirect(url) {
+            if (isAnimated) return
+            isAnimated = true
+
             gsap.to("#container1", { duration: 1, x: -100, opacity: 0 });
             gsap.to("#social", { duration: 1, x: -100, opacity: 0 });
             gsap.to("#container2", { duration: 1, x: 100, opacity: 0 });
@@ -192,18 +233,6 @@
             }, 1000); // Tunggu animasi selesai sebelum redirect
         }
 
-        about.addEventListener('click', e => {
-            e.preventDefault()
-            animateAndRedirect('about.html')
-        })
-        projects.addEventListener('click', e => {
-            e.preventDefault()
-            animateAndRedirect('about.html')
-        })
-        contact.addEventListener('click', e => {
-            e.preventDefault()
-            animateAndRedirect('about.html')
-        })
         github.addEventListener('click', e => {
             e.preventDefault()
             animateAndRedirect('https://github.com/Walukow')
