@@ -5,14 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walukow</title>
 
-    <!-- Link Tailwind -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Link Tailwind v4 -->
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+    
+    <!-- Link Tailwind v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind -->
-    <style type="text/tailwindcss">
+    <!-- Tailwind v3 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        first: {
+                            50:  '#d1d9e6',
+                            100: '#b8c3d8',
+                            200: '#a8b2d1',
+                            300: '#8d99bf',
+                            400: '#7a86ad',
+                            500: '#6976a0',
+                            600: '#5b678d',
+                            700: '#4d577a',
+                            800: '#3e4666',
+                            900: '#303652',
+                            950: '#222640',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <!-- Tailwind v4 -->
+    <!-- <style type="text/tailwindcss">
         @theme {
-        --color-clifford: #da373d;
-        --color-first-50: #d1d9e6;
+            --color-first-50: #d1d9e6;
             --color-first-100: #b8c3d8;
             --color-first-200: #a8b2d1;
             --color-first-300: #8d99bf;
@@ -24,7 +52,7 @@
             --color-first-900: #303652;
             --color-first-950: #222640;
         }
-        </style>
+        </style> -->
 
     <!-- Font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
