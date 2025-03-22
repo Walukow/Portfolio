@@ -65,16 +65,16 @@
 <body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-no-repeat text-first-50 transition-colors duration-300 max-h-[100vh] overflow-hidden flex justify-center">
 
     <!-- <img src="aku.png" class="h-[60vh] absolute right-0 -bottom-4 rounded-md opacity-70" alt=""> -->
-    <div id="img" class="hidden min-[700px]:block absolute top-0 right-0 w-40 sm:w-sm flex justify-center items-center">
-        <img src="img/foto.jpeg" class="rounded-bl-4xl brightness-50 md:brightness-60 min-[1155px]:brightness-100" alt="">
+    <div id="img" class="hidden min-[700px]:block absolute top-0 right-0 w-80 sm:w-sm flex justify-center items-center">
+        <img src="img/foto.jpeg" class="brightness-50 md:brightness-60 min-[1155px]:brightness-100 rounded-bl-2xl" alt="">
     </div>
-
-    <section class="text-first-50 space-y-4 min-[700px]:justify-center max-w-2xl relative min-h-screen flex flex-col font-[Montserrat] text-xs min-[700px]:text-base">
+    
+    <section class="text-first-50 space-y-4 justify-center max-w-2xl relative min-h-screen flex flex-col font-[Montserrat] text-xs min-[700px]:text-base">
         
-        <div id="resImg" class="min-[300px]:w-full min-w-[300px] max-w-[300px] mx-auto min-[700px]:hidden flex justify-center items-center px-10">
+        <div id="resImg" class="min-[300px]:w-[300px] w-full mx-auto min-[700px]:hidden flex justify-center items-center px-10">
             <img src="img/foto2.jpeg" class="rounded-md relative top-3" alt="">
         </div>
-        <div id="container1" class="relative z-10 space-y-2 min-h-[30vh] min-w-screen sm:min-w-sm sm:w-2xl px-4">
+        <div id="container1" class="relative z-10 space-y-2 min-h-[30vh] max-w-md min-[700px]:max-w-none sm:w-2xl px-4">
             <div id="fadeName" class="flex justify-between w-full items-center w-full">
                 <svg id="back" class="size-5 min-[700px]:size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
@@ -90,7 +90,7 @@
                 "<i class="font-semibold">In the end, <span class="text-first-500">everything</span> depends on <span class="text-first-500">you</span>.</i>"  
             </p>            
         </div>
-        <div id="down" class="flex justify-center cursor-pointer hover:text-first-300">
+        <!-- <div id="down" class="flex justify-center cursor-pointer hover:text-first-300">
             <svg class="size-7 animate-ping absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
             </svg>      
@@ -112,7 +112,7 @@
             <p id="secondText" class="opacity-0 font-[Montserrat] line-clamp-5 text-start text-xs min-[700px]:text-base">
                 My interest in <span class="font-semibold text-first-400">programming</span> began when I entered <span class="font-semibold text-first-400">SMKN 1 Pemalang</span>, especially after my parents bought me a laptop. Since then, my <i class="font-semibold text-first-400">programming skills</i> have significantly improved through <i class="font-semibold text-first-400">self-learning</i> rather than relying solely on school lessons.
             </p>
-        </div>
+        </div> -->
         
     </section>
 
@@ -165,83 +165,83 @@
         animateAndRedirect('index.html');
     }
 
-    let isAnimating = false;
+//     let isAnimating = false;
 
-const animateDown = () => {
-    if (isAnimating) return;
-    isAnimating = true;
+// const animateDown = () => {
+//     if (isAnimating) return;
+//     isAnimating = true;
 
-    // Hapus event listener dari tombol back
-    back.removeEventListener('click', backClickHandler);
+//     // Hapus event listener dari tombol back
+//     back.removeEventListener('click', backClickHandler);
 
-    gsap.to("#up svg", { duration: 0.5, rotate: 0, delay: 0 });
-    gsap.to("#back", { opacity: 0, y: 10, duration: 1 });
-    gsap.to("#down", { y: 100, duration: 1 });
-    gsap.to("#down svg:nth-child(1)", { opacity: 0, duration: 0.2 });
-    gsap.to("#up", { y: 100, duration: 1 });
-    gsap.to("#desc", { opacity: 0, y: -10, duration: 1 });
-    gsap.to("#resImg img", { duration: 0.5 , opacity: 0, delay: 0 });
+//     gsap.to("#up svg", { duration: 0.5, rotate: 0, delay: 0 });
+//     gsap.to("#back", { opacity: 0, y: 10, duration: 1 });
+//     gsap.to("#down", { y: 100, duration: 1 });
+//     gsap.to("#down svg:nth-child(1)", { opacity: 0, duration: 0.2 });
+//     gsap.to("#up", { y: 100, duration: 1 });
+//     gsap.to("#desc", { opacity: 0, y: -10, duration: 1 });
+//     gsap.to("#resImg img", { duration: 0.5 , opacity: 0, delay: 0 });
 
-    gsap.to("#container1", { y: -100, duration: 1, delay: 1 });
-    gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: -180, delay: 1 });
+//     gsap.to("#container1", { y: -100, duration: 1, delay: 1 });
+//     gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: -180, delay: 1 });
 
-    gsap.to("#quote", { opacity: 1, y: 10, duration: 1, delay: 2 });
-    gsap.to("#title", { opacity: 1, y: 10, duration: 1, delay: 2.5 });
-    gsap.to("#firstText", { opacity: 1, x: -10, duration: 1, delay: 3 });
-    gsap.to("#secondText", { opacity: 1, x: 10, duration: 1, delay: 3.5 });
+//     gsap.to("#quote", { opacity: 1, y: 10, duration: 1, delay: 2 });
+//     gsap.to("#title", { opacity: 1, y: 10, duration: 1, delay: 2.5 });
+//     gsap.to("#firstText", { opacity: 1, x: -10, duration: 1, delay: 3 });
+//     gsap.to("#secondText", { opacity: 1, x: 10, duration: 1, delay: 3.5 });
 
-    setTimeout(() => {
-        desc.classList.add('hidden');
-        back.classList.remove('cursor-pointer');
-        quote.classList.remove('hidden');
-        down.classList.add('hidden');
-        up.classList.remove('hidden');
-        container2.classList.remove('hidden');
-    }, 2000);
-    setTimeout(() => {
-        isAnimating = false;
-    }, 3500)
-};
+//     setTimeout(() => {
+//         desc.classList.add('hidden');
+//         back.classList.remove('cursor-pointer');
+//         quote.classList.remove('hidden');
+//         down.classList.add('hidden');
+//         up.classList.remove('hidden');
+//         container2.classList.remove('hidden');
+//     }, 2000);
+//     setTimeout(() => {
+//         isAnimating = false;
+//     }, 3500)
+// };
 
-const animateUp = () => {
-    if (isAnimating) return;
-    isAnimating = true;
+// const animateUp = () => {
+//     if (isAnimating) return;
+//     isAnimating = true;
 
-    gsap.to("#quote", { opacity: 0, y: -10, duration: 1 });
-    gsap.to("#title", { opacity: 0, y: -10, duration: 1, delay: 0.5 });
-    gsap.to("#firstText", { opacity: 0, x: 10, duration: 1, delay: 0.5 });
-    gsap.to("#secondText", { opacity: 0, x: -10, duration: 1, delay: 0.5 });
+//     gsap.to("#quote", { opacity: 0, y: -10, duration: 1 });
+//     gsap.to("#title", { opacity: 0, y: -10, duration: 1, delay: 0.5 });
+//     gsap.to("#firstText", { opacity: 0, x: 10, duration: 1, delay: 0.5 });
+//     gsap.to("#secondText", { opacity: 0, x: -10, duration: 1, delay: 0.5 });
 
-    gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: 0, delay: 0 });
-    gsap.to("#up svg", { duration: 0.5, rotate: 180, delay: 0 });
+//     gsap.to("#down svg:nth-child(2)", { duration: 0.5, rotate: 0, delay: 0 });
+//     gsap.to("#up svg", { duration: 0.5, rotate: 180, delay: 0 });
 
-    gsap.to("#container1", { y: 0, duration: 1, delay: 1 });
-    gsap.to("#resImg img", { duration: 0.5 , opacity: 1, delay: 2 });
-    gsap.to("#down", { y: 0, duration: 1, delay: 1 });
-    gsap.to("#up", { y: 0, duration: 1, delay: 1 });
+//     gsap.to("#container1", { y: 0, duration: 1, delay: 1 });
+//     gsap.to("#resImg img", { duration: 0.5 , opacity: 1, delay: 2 });
+//     gsap.to("#down", { y: 0, duration: 1, delay: 1 });
+//     gsap.to("#up", { y: 0, duration: 1, delay: 1 });
 
-    setTimeout(() => {
-        quote.classList.add('hidden');
-        container2.classList.add('hidden');
-        up.classList.add('hidden');
-        down.classList.remove('hidden');
+//     setTimeout(() => {
+//         quote.classList.add('hidden');
+//         container2.classList.add('hidden');
+//         up.classList.add('hidden');
+//         down.classList.remove('hidden');
 
-        gsap.to("#down svg:nth-child(1)", { opacity: 1, duration: 0.2 });
-        gsap.to("#desc", { opacity: 1, y: 0, duration: 1 });
-        gsap.to("#back", { opacity: 1, y: 0, duration: 1 });
+//         gsap.to("#down svg:nth-child(1)", { opacity: 1, duration: 0.2 });
+//         gsap.to("#desc", { opacity: 1, y: 0, duration: 1 });
+//         gsap.to("#back", { opacity: 1, y: 0, duration: 1 });
 
-        desc.classList.remove('hidden');
-        back.classList.add('cursor-pointer');
+//         desc.classList.remove('hidden');
+//         back.classList.add('cursor-pointer');
 
-        isAnimating = false;
+//         isAnimating = false;
 
-        // Tambahkan event listener ke back setelah animasi selesai
-        back.addEventListener('click', backClickHandler);
-    }, 2000);
-};
+//         // Tambahkan event listener ke back setelah animasi selesai
+//         back.addEventListener('click', backClickHandler);
+//     }, 2000);
+// };
 
-down.addEventListener('click', animateDown);
-up.addEventListener('click', animateUp);
+// down.addEventListener('click', animateDown);
+// up.addEventListener('click', animateUp);
 back.addEventListener('click', backClickHandler);
 
     </script>
