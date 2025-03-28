@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walukow</title>
-    <!-- Link Tailwind v4 -->
-    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+    <!-- Link Tailwind v4
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        
+    <style type="text/tailwindcss">
+        @theme {
+            --color-first-50: #d1d9e6;
+            --color-first-100: #b8c3d8;
+            --color-first-200: #a8b2d1;
+            --color-first-300: #8d99bf;
+            --color-first-400: #7a86ad;
+            --color-first-500: #6976a0;
+            --color-first-600: #5b678d;
+            --color-first-700: #4d577a;
+            --color-first-800: #3e4666;
+            --color-first-900: #303652;
+            --color-first-950: #222640;
+        }
+        </style> -->
     
     <!-- Link Tailwind v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,23 +51,6 @@
         }
     </script>
 
-
-    <!-- Tailwind v4 -->
-    <!-- <style type="text/tailwindcss">
-        @theme {
-            --color-first-50: #d1d9e6;
-            --color-first-100: #b8c3d8;
-            --color-first-200: #a8b2d1;
-            --color-first-300: #8d99bf;
-            --color-first-400: #7a86ad;
-            --color-first-500: #6976a0;
-            --color-first-600: #5b678d;
-            --color-first-700: #4d577a;
-            --color-first-800: #3e4666;
-            --color-first-900: #303652;
-            --color-first-950: #222640;
-        }
-        </style> -->
 
 
 
@@ -231,7 +230,7 @@
             })
             contact.addEventListener('click', e => {
                 e.preventDefault()
-                animateAndRedirect('about.html')
+                animateAndRedirect('contact.html')
             })
             about.classList.add('cursor-pointer')
             projects.classList.add('cursor-pointer')

@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walukow</title>
-    <!-- Link Tailwind v4 -->
-    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+    <!-- Link Tailwind v4
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        
+    <style type="text/tailwindcss">
+        @theme {
+            --color-first-50: #d1d9e6;
+            --color-first-100: #b8c3d8;
+            --color-first-200: #a8b2d1;
+            --color-first-300: #8d99bf;
+            --color-first-400: #7a86ad;
+            --color-first-500: #6976a0;
+            --color-first-600: #5b678d;
+            --color-first-700: #4d577a;
+            --color-first-800: #3e4666;
+            --color-first-900: #303652;
+            --color-first-950: #222640;
+        }
+        </style> -->
     
     <!-- Link Tailwind v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,22 +52,7 @@
     </script>
 
 
-    <!-- Tailwind v4 -->
-    <!-- <style type="text/tailwindcss">
-        @theme {
-            --color-first-50: #d1d9e6;
-            --color-first-100: #b8c3d8;
-            --color-first-200: #a8b2d1;
-            --color-first-300: #8d99bf;
-            --color-first-400: #7a86ad;
-            --color-first-500: #6976a0;
-            --color-first-600: #5b678d;
-            --color-first-700: #4d577a;
-            --color-first-800: #3e4666;
-            --color-first-900: #303652;
-            --color-first-950: #222640;
-        }
-        </style> -->
+
 
 
 
@@ -63,42 +64,225 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-no-repeat text-first-50 transition-colors duration-300 max-h-[100vh] overflow-hidden flex justify-center">
+<body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-fixed bg-no-repeat text-first-50 transition-colors duration-300 max-h-[100vh] flex justify-center overflow-x-hidden">
+
+    <!-- Navigation -->
+
+    <!-- <nav class="fixed top-0 left-0 w-full p-4 bg-transparent backdrop-blur-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <svg id="back" class="size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+            </svg>         
+            <p class="text-2xl min-[700px]:text-4xl font-semibold text-end">PROJECTS</p>
+        </div>
+    </nav> -->
 
     <!-- Hero Section -->
-    <section class="text-first-50 space-y-4 justify-center relative min-h-screen flex flex-col p-4 font-[Montserrat] text-xs min-[700px]:text-base">
+    <main class="text-first-50 space-y-4 justify-center mt-[30vh] relative flex flex-col p-4 font-[Montserrat] text-xs min-[700px]:text-base">
 
-        <div class="relative z-10 space-y-6">
-            <div class="flex justify-between items-center">
-                <h2 class="text-4xl font-semibold tracking-wide">PROJECTS</h2>
-                <span class="text-lg">9</span>
+
+        <!-- <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
+        </div> -->
+
+        <div class="relative z-10 space-y-2 min-h-[30vh] w-[100vw] max-w-md sm:w-2xl px-4">
+            <div id="fadeName" class="flex justify-between w-full items-center w-full">
+                <svg id="back" class="size-5 min-[700px]:size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                </svg>         
+                <p class="text-2xl min-[700px]:text-4xl font-semibold text-end">PROJECTS</p>
             </div>
-            <hr class="w-full h-[2px] bg-gray-400">
+            <hr id="firstLine" class=" min-[451px]:w-full h-[2px] text-transparent bg-first-50">
             <div class="space-y-4">
-                <div class="flex justify-between border-b pb-2">
-                    <span class="font-semibold">sharlee</span>
-                    <span>Branding</span>
+                <section class=" py-4">
+                    <div class="space-y-4 pb-4">
+                        <div class="flex justify-between text-lg min-[700px]:text-2xl">
+                            <span class="font-semibold">Kasu</span>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                        </p>
+                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                            <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                            text-xs font-medium leading-5 text-first-300">
+                            Web App
+                        </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                        text-xs font-medium leading-5 text-first-300">
+                        Laravel
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        TailwindCSS
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        AlpineJS
+                    </div>
+                    </li>
+                    </ul>
+                    <div class="w-1/2 aspect-[16/9]">
+                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+                    </div>                          
+                    </div>
+                </section>
+                <section class=" py-4">
+                    <div class="space-y-4 pb-4">
+                        <div class="flex justify-between text-lg min-[700px]:text-2xl">
+                            <span class="font-semibold">Kasu</span>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                        </p>
+                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                            <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                            text-xs font-medium leading-5 text-first-300">
+                            Web App
+                        </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                        text-xs font-medium leading-5 text-first-300">
+                        Laravel
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        TailwindCSS
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        AlpineJS
+                    </div>
+                    </li>
+                    </ul>
+                    <div class="w-1/2 aspect-[16/9]">
+                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+                    </div>                          
+                    </div>
+                </section>
+                <section class=" py-4">
+                    <div class="space-y-4 pb-4">
+                        <div class="flex justify-between text-lg min-[700px]:text-2xl">
+                            <span class="font-semibold">Kasu</span>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                        </p>
+                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                            <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                            text-xs font-medium leading-5 text-first-300">
+                            Web App
+                        </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                        text-xs font-medium leading-5 text-first-300">
+                        Laravel
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        TailwindCSS
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        AlpineJS
+                    </div>
+                    </li>
+                    </ul>
+                    <div class="w-1/2 aspect-[16/9]">
+                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+                    </div>                          
+                    </div>
+                </section>
+                <section class=" py-4">
+                    <div class="space-y-4 pb-4">
+                        <div class="flex justify-between text-lg min-[700px]:text-2xl">
+                            <span class="font-semibold">Kasu</span>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                        </p>
+                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                            <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                            text-xs font-medium leading-5 text-first-300">
+                            Web App
+                        </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                        text-xs font-medium leading-5 text-first-300">
+                        Laravel
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        TailwindCSS
+                    </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                        AlpineJS
+                    </div>
+                    </li>
+                    </ul>
+                    <div class="w-1/2 aspect-[16/9]">
+                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+                    </div>                          
+                    </div>
+                </section>
+
+
+
+
+
+
+
+                <!-- <div class="flex justify-between">
+                    <span class="font-semibold">Tomskut</span>
+                    <span>Web Profile</span>
                 </div>
-                <div class="flex justify-between border-b pb-2">
-                    <span class="font-semibold">act responsable</span>
-                    <span>Web Development</span>
+                <div class="flex justify-between">
+                    <span class="font-semibold">Pantes</span>
+                    <span>Mini E-commerce</span>
                 </div>
-                <div class="flex justify-between border-b pb-2">
-                    <span class="font-semibold">dua lipa</span>
-                    <span>Portrait</span>
+                <div class="flex justify-between">
+                    <span class="font-semibold">Student Management</span>
+                    <span>Java Application</span>
                 </div>
-                <div class="flex justify-between border-b pb-2">
-                    <span class="font-semibold">cocolyze</span>
-                    <span>UX/UI Design</span>
+                <div class="flex justify-between">
+                    <span class="font-semibold">Machine</span>
+                    <span>Python</span>
                 </div>
-                <div class="flex justify-between border-b pb-2">
-                    <span class="font-semibold">les indécis</span>
-                    <span>Branding</span>
-                </div>
+                <div class="flex justify-between">
+                    <span class="font-semibold">LKS Web Technologies</span>
+                    <span>Certivicate</span>
+                </div> -->
             </div>
         </div>
 
-    </section>
+    </main>
+
+    
 
 
 
@@ -115,7 +299,24 @@
 
     <!-- Script -->
     <script>
+        let isAnimated = false
 
+        function animateAndRedirect(url) {
+            if (isAnimated) return
+            isAnimated = true
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 1000); // Tunggu animasi selesai sebelum redirect
+        }
+
+
+        function backClickHandler(e) {
+            e.preventDefault();
+            animateAndRedirect('index.html');
+        }
+
+        back.addEventListener('click', backClickHandler)
     </script>
     
 
