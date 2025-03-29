@@ -54,7 +54,10 @@
 
 
 
-
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,18 +67,7 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-fixed bg-no-repeat text-first-50 transition-colors duration-300 max-h-[100vh] flex justify-center">
-
-    <!-- Navigation -->
-
-    <!-- <nav class="fixed top-0 left-0 w-full p-4 bg-transparent backdrop-blur-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <svg id="back" class="size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
-            </svg>         
-            <p class="text-2xl min-[700px]:text-4xl font-semibold text-end">PROJECTS</p>
-        </div>
-    </nav> -->
+<body class="bg-[url(img/bg.jpeg)] bg-cover bg-fixed bg-no-repeat text-first-50 transition-colors duration-300 max-h-[100vh] flex justify-center">
 
     <!-- Hero Section -->
     <main class="text-first-50 space-y-4 justify-center mt-[30vh] relative flex flex-col p-4 font-[Montserrat] text-xs min-[700px]:text-base">
@@ -87,15 +79,15 @@
 
         <div class="relative z-10 space-y-2 min-h-[30vh] max-w-md sm:w-2xl px-4">
             <!-- sticky top-[32vh] -->
-            <div id="fadeName" class="flex justify-between w-full items-center w-full">
+            <div id="fadeName" data-aos="fade-down" data-aos-duration="2000" class=" flex justify-between w-full items-center w-full">
                 <svg id="back" class="size-5 min-[700px]:size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
                 </svg>         
                 <p class="text-2xl min-[700px]:text-4xl font-semibold text-end">PROJECTS</p>
             </div>
-            <hr id="firstLine" class=" min-[451px]:w-full h-[2px] text-transparent bg-first-50">
+            <hr id="firstLine" data-aos="fade-down" data-aos-duration="2000" class=" min-[451px]:w-full h-[2px] text-transparent bg-first-50">
             <div class="space-y-4">
-                <section class=" py-4">
+                <section data-aos="fade-down" data-aos-duration="2000" class=" py-4 ">
                     <div class="space-y-4 pb-4">
                         <div class="text-lg min-[700px]:text-2xl">
                             <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -138,12 +130,12 @@
                     </div>
                     </li>
                     </ul>
-                    <div class="w-1/2 aspect-[16/9]">
+                    <div class="w-3/4 aspect-[16/9]">
                         <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
                     </div>                          
                     </div>
                 </section>
-                <section class=" py-4">
+                <section data-aos="fade-down" class="py-4">
                     <div class="space-y-4 pb-4">
                         <div class="text-lg min-[700px]:text-2xl">
                             <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -180,12 +172,12 @@
                     </div>
                     </li>
                     </ul>
-                    <div class="w-1/2 aspect-[16/9]">
+                    <div class="w-3/4 aspect-[16/9]">
                         <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
                     </div>                          
                     </div>
                 </section>
-                <section class=" py-4">
+                <section data-aos="fade-down" class="py-4">
                     <div class="space-y-4 pb-4">
                         <div class="text-lg min-[700px]:text-2xl">
                             <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -222,7 +214,7 @@
                     </div>
                     </li>
                     </ul>
-                    <div class="w-1/2 aspect-[16/9]">
+                    <div class="w-3/4 aspect-[16/9]">
                         <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
                     </div>                          
                     </div>
@@ -275,8 +267,12 @@
     <!-- Text Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
 
+
+
     <!-- Script -->
     <script>
+        AOS.init()
+
         let isAnimated = false
 
         function animateAndRedirect(url) {
