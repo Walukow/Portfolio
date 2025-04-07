@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walukow</title>
-    <!-- Link Tailwind v4
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Link Tailwind v4 -->
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         
     <style type="text/tailwindcss">
         @theme {
@@ -23,10 +23,12 @@
         }
         </style> -->
     
+    <!-- Link Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
     <!-- Link Tailwind v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind v3 -->
     <script>
         tailwind.config = {
             theme: {
@@ -67,224 +69,836 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-no-repeat bg-fixed text-first-50 transition-colors duration-300 max-h-[100vh] flex justify-center">
+<body class="bg-[url(img/bg.jpeg)] bg-cover bg-center bg-no-repeat bg-fixed text-first-50 transition-colors duration-300 max-h-[100vh] flex justify-center sm:overflow-hidden">
+    <div class="hidden sm:flex items-center justify-between absolute top-0 sm:w-[80vw] 2xl:w-[60vw] mt-[50vh] mx-auto">
+        <svg id="left" class="size-7 inline cursor-pointer hover:text-first-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+        </svg>        
+        <svg id="right" class="size-7 inline cursor-pointer hover:text-first-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+        </svg>                                            
+    </div>
 
     <!-- Hero Section -->
-    <main class="text-first-50 space-y-4 justify-center mt-[30vh] relative flex flex-col p-4 font-[Montserrat] text-xs min-[700px]:text-base">
-
+    <main class="text-first-50 space-y-4 justify-center mt-[30vh] sm:mt-[20vh] relative flex flex-col p-4 font-[Montserrat] text-xs lg:text-base">
+        
 
         <!-- <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
         </div> -->
 
-        <div class="relative z-10 space-y-2 min-h-[30vh] max-w-md sm:max-w-2xl px-4">
-            <!-- sticky top-[32vh] -->
-            <div id="fadeName" data-aos="fade-down" data-aos-duration="2000" class=" flex justify-between w-full items-center w-full">
-                <svg id="back" class="size-5 min-[700px]:size-7 cursor-pointer hover:text-first-300 duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <div class="relative z-10 space-y-2 min-h-[30vh] max-w-md lg:max-w-2xl px-4">
+            <div id="fadeName" data-aos-duration="2000" class=" flex justify-between w-full items-center w-full">
+                <svg id="back" class="size-5 lg:size-7 cursor-pointer hover:text-first-400 transition duration-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
                 </svg>         
-                <p class="text-2xl min-[700px]:text-4xl font-semibold text-end">PROJECTS</p>
+                <p class="text-2xl lg:text-4xl font-semibold text-end">PROJECTS</p>
             </div>
-            <hr id="firstLine" data-aos="fade-down" data-aos-duration="2000" class=" min-[451px]:w-full h-[2px] text-transparent bg-first-50">
+            <hr id="firstLine" class=" min-[451px]:w-full h-[2px] text-transparent bg-first-50 scale-x-0 origin-left">
             <div class="space-y-4">
-                <section data-aos="fade-down" data-aos-duration="2000" class=" py-4 ">
-                    <div class="space-y-4 pb-4">
-                        <div class="text-lg min-[700px]:text-2xl">
-                            <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
-                            </svg>                              
-                            <span class="font-semibold">Tomskut</span>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
-                        </p>
-                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                            <li class="mr-1.5 mt-2">
+                <div id="dekstop" class="hidden sm:block">
+                    <section id="s1" class="py-4">
+                        <div class="space-y-4 pb-4">
+                            <div class="text-lg min-[700px]:text-2xl">
+                                <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
+                                </svg>                              
+                                <span class="font-semibold">Tomskut</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Web Profile
+                            </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
                             <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
                             text-xs font-medium leading-5 text-first-300">
-                            Web Profile
+                            GSAP
                         </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                        text-xs font-medium leading-5 text-first-300">
-                        GSAP
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        AOS
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        TailwindCSS
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        AlpineJS
-                    </div>
-                    </li>
-                    </ul>
-                    <div class="w-3/4 aspect-[16/9]">
-                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
-                    </div>                          
-                    </div>
-                </section>
-                <section data-aos="fade-down" class="py-4">
-                    <div class="space-y-4 pb-4">
-                        <div class="text-lg min-[700px]:text-2xl">
-                            <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
-                            </svg>                              
-                            <span class="font-semibold">Kasu</span>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            AOS
                         </div>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
-                        </p>
-                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                            <li class="mr-1.5 mt-2">
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            TailwindCSS
+                        </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            AlpineJS
+                        </div>
+                        </li>
+                        </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="s2"  class="hidden py-4">
+                        <div class="space-y-4 pb-4">
+                            <div class="text-lg min-[700px]:text-2xl">
+                                <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
+                                </svg>                              
+                                <span class="font-semibold">Kasu</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Web App
+                            </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
                             <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
                             text-xs font-medium leading-5 text-first-300">
-                            Web App
+                            Laravel
                         </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                        text-xs font-medium leading-5 text-first-300">
-                        Laravel
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        TailwindCSS
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        AlpineJS
-                    </div>
-                    </li>
-                    </ul>
-                    <div class="w-3/4 aspect-[16/9]">
-                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
-                    </div>                          
-                    </div>
-                </section>
-                <section data-aos="fade-down" class="py-4">
-                    <div class="space-y-4 pb-4">
-                        <div class="text-lg min-[700px]:text-2xl">
-                            <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
-                            </svg>                              
-                            <span class="font-semibold">Pantes</span>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            TailwindCSS
                         </div>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
-                        </p>
-                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                            <li class="mr-1.5 mt-2">
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            AlpineJS
+                        </div>
+                        </li>
+                        </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>                      
+                        </div>
+                    </section>
+                    <section id="s3" class="hidden py-4">
+                        <div class="space-y-4 pb-4">
+                            <div class="text-lg min-[700px]:text-2xl">
+                                <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
+                                </svg>                              
+                                <span class="font-semibold">Pantes</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Mini E-commerce
+                            </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
                             <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
                             text-xs font-medium leading-5 text-first-300">
-                            Mini E-commerce
+                            Laravel
                         </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                        text-xs font-medium leading-5 text-first-300">
-                        Laravel
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        TailwindCSS
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                                text-xs font-medium leading-5 text-first-300">
-                        AlpineJS
-                    </div>
-                    </li>
-                    </ul>
-                    <div class="w-3/4 aspect-[16/9]">
-                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
-                    </div>                          
-                    </div>
-                </section>
-                <section data-aos="fade-down" class="py-4">
-                    <div class="space-y-4 pb-4">
-                        <div class="text-lg min-[700px]:text-2xl">
-                            <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
-                            </svg>                              
-                            <span class="font-semibold">Certivicate</span>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            TailwindCSS
                         </div>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
-                        </p>
-                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                            <li class="mr-1.5 mt-2">
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            AlpineJS
+                        </div>
+                        </li>
+                        </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>                      
+                        </div>
+                    </section>
+                    <section id="s4" class="hidden py-4">
+                        <div class="space-y-4 pb-4">
+                            <div class="text-lg min-[700px]:text-2xl">
+                                <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+                                </svg>                              
+                                <span class="font-semibold">Certivicate</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Web Technologies
+                            </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
                             <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
                             text-xs font-medium leading-5 text-first-300">
-                            Web Technologies
+                            2nd
                         </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                        text-xs font-medium leading-5 text-first-300">
-                        2nd
-                    </div>
-                    </li>
-                    </ul>
-                    <div class="w-3/4 aspect-[16/9]">
-                        <img src="img/Web Technologies.jpeg" alt="" class="w-full h-full object-cover rounded-md">
-                    </div>                          
-                    </div>
-                </section>
-                <section data-aos="fade-down" class="py-4">
-                    <div class="space-y-4 pb-4">
-                        <div class="text-lg min-[700px]:text-2xl">
-                            <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
-                            </svg>                              
-                            <span class="font-semibold">Certivicate</span>
+                        </li>
+                        </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>                      
                         </div>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
-                        </p>
-                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                            <li class="mr-1.5 mt-2">
+                    </section>
+                    <section id="s5" class="hidden py-4">
+                        <div class="space-y-4 pb-4">
+                            <div class="text-lg min-[700px]:text-2xl">
+                                <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+                                </svg>                              
+                                <span class="font-semibold">Certivicate</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Data Science
+                            </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
                             <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
                             text-xs font-medium leading-5 text-first-300">
-                            Data Science
+                            SAP Build Apps
                         </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
-                        text-xs font-medium leading-5 text-first-300">
-                        SAP Build Apps
-                    </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            Training Course
+                        </div>
+                        </li>
+                        </ul>
+                        <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                            <!-- Carousel wrapper -->
+                            <div class="relative w-full h-full">
+                            <!-- Item 1 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                            </div>
+                            <!-- Item 5 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                            </div>
+                            </div>
+                        
+                            <!-- Slider controls -->
+                            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                            </button>
+                            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                            </button>
+                        </div>                      
+                        </div>
+                    </section>
+                </div>
+
+                <div id="responsive" class="sm:hidden">
+                    <section class=" py-4 overflow-hidden">
+                        <div id="firstSection" class="space-y-4 pb-4">
+                            <div class="text-lg lg:text-2xl">
+                                <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
+                                </svg>                              
+                                <span class="font-semibold">Tomskut</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
                                 text-xs font-medium leading-5 text-first-300">
-                        Training Course
+                                Web Profile
+                            </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                            text-xs font-medium leading-5 text-first-300">
+                            GSAP
+                        </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            AOS
+                        </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            TailwindCSS
+                        </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                            AlpineJS
+                        </div>
+                        </li>
+                        </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>                      
+                        </div>
+                    </section>
+                    <div id="below">
+                        <section id="secondSection" class="py-4">
+                            <div class="space-y-4 pb-4">
+                                <div class="text-lg min-[700px]:text-2xl">
+                                    <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
+                                    </svg>                              
+                                    <span class="font-semibold">Kasu</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                                </p>
+                                <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                    <li class="mr-1.5 mt-2">
+                                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                                    Web App
+                                </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Laravel
+                            </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                        text-xs font-medium leading-5 text-first-300">
+                                TailwindCSS
+                            </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                        text-xs font-medium leading-5 text-first-300">
+                                AlpineJS
+                            </div>
+                            </li>
+                            </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>
+                            </div>
+                        </section>
+                        <section data-aos="fade-up" class="py-4">
+                            <div class="space-y-4 pb-4">
+                                <div class="text-lg min-[700px]:text-2xl">
+                                    <svg class="w-6 h-6 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.153 19 21 12l-4.847-7H3l4.848 7L3 19h13.153Z"/>
+                                    </svg>                              
+                                    <span class="font-semibold">Pantes</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                                </p>
+                                <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                    <li class="mr-1.5 mt-2">
+                                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                                    Mini E-commerce
+                                </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                Laravel
+                            </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                        text-xs font-medium leading-5 text-first-300">
+                                TailwindCSS
+                            </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                            <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                        text-xs font-medium leading-5 text-first-300">
+                                AlpineJS
+                            </div>
+                            </li>
+                            </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>
+                            </div>
+                        </section>
+                        <section data-aos="fade-up" class="py-4">
+                            <div class="space-y-4 pb-4">
+                                <div class="text-lg min-[700px]:text-2xl">
+                                    <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+                                    </svg>                              
+                                    <span class="font-semibold">Certivicate</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                                </p>
+                                <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                    <li class="mr-1.5 mt-2">
+                                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                                    Web Technologies
+                                </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                2nd
+                            </div>
+                            </li>
+                            </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>
+                            </div>
+                        </section>
+                        <section data-aos="fade-up" class="py-4">
+                            <div class="space-y-4 pb-4">
+                                <div class="text-lg min-[700px]:text-2xl">
+                                    <svg class="w-6 h-6 inline mb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+                                    </svg>                              
+                                    <span class="font-semibold">Certivicate</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel <span class="font-semibold text-first-400">web development</span> eius voluptatibus qui consequatur ullam dolores suscipit laborum <span class="font-semibold text-first-400">web development</span> quasi.
+                                </p>
+                                <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                                    <li class="mr-1.5 mt-2">
+                                    <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                    text-xs font-medium leading-5 text-first-300">
+                                    Data Science
+                                </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                text-xs font-medium leading-5 text-first-300">
+                                SAP Build Apps
+                            </div>
+                            </li>
+                            <li class="mr-1.5 mt-2">
+                                <div class="flex items-center rounded-full bg-first-400/10 px-3 py-1 
+                                        text-xs font-medium leading-5 text-first-300">
+                                Training Course
+                            </div>
+                            </li>
+                            </ul>
+                            <div id="controls-carousel" class="relative w-full aspect-[16/9] overflow-hidden rounded-lg" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="relative w-full h-full">
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 1" />
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 2" />
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 3" />
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 4" />
+                                </div>
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <img src="img/Web Technologies.jpeg" class="w-full h-full object-cover rounded-lg" alt="Slide 5" />
+                                </div>
+                                </div>
+                            
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-first-400 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white rtl:rotate-180" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                                </button>
+                            </div>                 
+                            </div>
+                        </section>
                     </div>
-                    </li>
-                    </ul>
-                    <div class="w-3/4 aspect-[16/9]">
-                        <img src="img/Sertifikat Surya Herlambang Walukow_page-0001.jpg" alt="" class="w-full h-full object-cover rounded-md">
-                    </div>                          
-                    </div>
-                </section>
+                </div>
 
 
 
@@ -333,21 +947,109 @@
     <!-- Text Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
 
-
+    <!-- FLowbite Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
     <!-- Script -->
     <script>
         AOS.init()
 
-        let isAnimated = false
+        let isAnimated = true
+        let right = document.getElementById('right')
+        let left = document.getElementById('left')
+        
+let count = 1;
+let threshold = document.getElementById("dekstop").children.length;
+
+function changePreview(type) {
+    if (isAnimated) return;
+    isAnimated = true;
+
+    let currentTarget = document.getElementById(`s${count}`);
+    let nextCount = count;
+
+    if (type === "right") {
+        gsap.to(currentTarget, { opacity: 0, x: 20, duration: 0.5, ease: "power2.out", onComplete: () => {
+            currentTarget.classList.add("hidden");
+            gsap.to(currentTarget, {x: 0, duration: 0.1})
+            currentTarget.style.transform = "translateX(0px)";
+            currentTarget.style.opacity = "1";
+
+            nextCount = count === threshold ? 1 : count + 1;
+            let nextTarget = document.getElementById(`s${nextCount}`);
+            nextTarget.classList.remove("hidden");
+
+            gsap.from(nextTarget, { opacity: 0, x: -20, duration: 0.5, ease: "power2.out" });
+
+            count = nextCount;
+        }});
+    } else if (type === "left") {
+        gsap.to(currentTarget, { opacity: 0, x: -20, duration: 0.5, ease: "power2.out", onComplete: () => {
+            currentTarget.classList.add("hidden");
+            gsap.to(currentTarget, {x: 0, duration: 0.1})
+            currentTarget.style.transform = "translateX(0px)"; 
+            currentTarget.style.opacity = "1"; 
+
+            nextCount = count === 1 ? threshold : count - 1;
+            let nextTarget = document.getElementById(`s${nextCount}`);
+            nextTarget.classList.remove("hidden");
+
+            gsap.from(nextTarget, { opacity: 0, x: 20, duration: 0.5, ease: "power2.out" });
+
+            count = nextCount;
+        }});
+    }
+
+    setTimeout(() => {
+        isAnimated = false;
+    }, 600);
+}
+
+
+        right.addEventListener('click',() => {
+            changePreview('right')
+        })
+        left.addEventListener('click',() => {
+            changePreview('left')
+        })
+
+        setTimeout(() => {
+            isAnimated = false
+        }, 1500)
+
+        gsap.from("#fadeName", { opacity: 0, y: 20, duration: 1, delay: 1, ease: 'power2.out' });
+        gsap.from("#firstSection", { opacity: 0, y: -20, duration: 1, delay: 1, ease: 'power2.out' });
+        gsap.from("#dekstop", { opacity: 0, y: -20, duration: 1, delay: 1, ease: 'power2.out' });
+        gsap.from("#secondSection", { opacity: 0, y: 20, duration: 1, delay: 1.5, ease: 'power2.out' });
+        gsap.to("#firstLine", {
+        scaleX: 1,
+        duration: 1,
+        ease: "power2.out"
+        });
+        gsap.from("#right", { opacity: 0, x: -100, duration: 1, delay: 1.5, ease: 'power2.out' })
+        gsap.from("#left", { opacity: 0, x: 100, duration: 1, delay: 1.5, ease: 'power2.out' })
 
         function animateAndRedirect(url) {
             if (isAnimated) return
             isAnimated = true
+            
+            gsap.to("#below", { opacity: 0, duration: 1, ease: 'power2.in' });
+            gsap.to("#fadeName", { opacity: 0, y: 20, duration: 1, ease: 'power2.in' });
+            gsap.to("#firstSection", { opacity: 0, y: -20, duration: 1, ease: 'power2.in' });
+            gsap.to("#dekstop", { opacity: 0, y: -20, duration: 1, ease: 'power2.in' });
+            gsap.to("#firstLine", {
+            scaleX: 0,
+            duration: 1,
+            delay: 1,
+            ease: "power2.in"
+            });
+            gsap.to("#right", { opacity: 0, x: -100, duration: 0.5, ease: 'power2.in' });
+            gsap.to("#left", { opacity: 0, x: 100, duration: 0.5, ease: 'power2.in' });
+
 
             setTimeout(() => {
                 window.location.href = url;
-            }, 1000); // Tunggu animasi selesai sebelum redirect
+            }, 2000); 
         }
 
 
